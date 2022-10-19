@@ -1,0 +1,125 @@
+/*File: app.css
+Student Name: Alexander Maynard
+Student ID: 301170707
+Date: 2022-10-01*/
+
+
+/*STYLES FOR CONTACT.EJS*/
+
+/*styling for the form text alignment*/
+form {
+    text-align: center;
+}
+
+/*The label and input styling displays the number inputs 
+and labels for the number inputs neatly*/
+label {
+    float: left;
+    text-align: left;
+    width: 16%;
+    padding: .5%;
+    font-size: large;
+    font-weight: 800;
+    margin-left: 20%;
+    text-align: right;
+}
+
+/*Input styles work in conjunction with the label styles to 
+position the inputs neatly*/
+input, textarea {
+    width: 30%;
+    margin: .5%;
+    margin-right: 30%;   
+}
+
+
+/*p styling (this is for the error text)*/
+form p {
+    padding: .5%;
+    color: red;
+    font-weight: 600;
+    font-size: medium;
+}
+
+
+/*normal button styling*/
+#send, #clear {
+    width: max-content;
+    padding: 1%;
+    margin: 2%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+/*button styling based on hover action*/
+#send:hover, #clear:hover {
+    width: max-content;
+    padding: 1%;
+    margin: 2%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px;
+    border-radius: 5px;
+    background-color: rgb(152, 149, 149);
+}
+
+/*button styling based on active action*/
+#send:active, #clear:active {
+    width: max-content;
+    padding: 1%;
+    margin: 2%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px;
+    border-radius: 5px;
+    background-color: rgb(72, 70, 70);;
+}
+
+
+/*END OF STYLES FOR CONTACT.EJS*/
+
+
+
+
+
+/*GENERAL STYLES FOR THE SITE*/
+/*title at top of each page (from content.ejs) styling*/
+.title {
+    text-align: center;
+    padding: 2%;
+    color: #000000;
+    text-shadow: 1px 3px #778899;
+    text-transform: uppercase;
+}
+
+/*background-color, font-family, box-shadow and padding styles for container class. AKA for home, about, projects, services and contact (their main content).*/
+.container {
+    background-color: #8b9196;
+    padding: 2%;
+    box-shadow: 4px 4px 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Margin and text decoration styles for h2s and h3s*/
+h2, h3 {
+    margin-top: 2%;
+    text-decoration: dashed;
+}
+
+/*h2 color and text-transform styles*/
+h2 {
+    color: white;
+    text-transform: uppercase;
+}
+
+/*page link styles (not hove or active)*/
+a {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 800;
+}
+
+/*list item margin styles*/
+li {
+    margin: 1%;
+}
