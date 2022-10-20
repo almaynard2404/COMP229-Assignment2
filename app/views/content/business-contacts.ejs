@@ -5,6 +5,45 @@ Date: 2022-10-19-->
 
 <!--Simple container for the business-contacts page content-->
 <div class="container">
+    <% if(username) { %>
+    <a href="/update" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Update Contact</a>
+    <% } %>
+    <div class="row">
+        <div class="col">
     
-    <h2>Hello There!</h2>
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col">Contact Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="businessContactList">
+                    <!-- Repeatable Rows -->
+                    <% for(let count = 0; count < businessContacts.length; count++) { %>
+                        <tr>
+                            <th scope="row" class="text-center"><%= count + 1 %></th>
+                            <td><%= businessContacts[count].contactName %></td>
+                            <td><%= businessContacts[count].contactNumber %></td>
+                            <td><%= businessContacts[count].email %></td>
+
+                            <% if(username) { %>
+                            
+                            <td class="text-center col-1">
+                                <a href="/update/<%= business_contacts[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            <% } %> 
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

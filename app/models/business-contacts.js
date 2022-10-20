@@ -3,13 +3,12 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const BusinessContactsSchema = new Schema({
-    name: String, 
-    number: String, 
-    director: String,
+    contactName: String, 
+    contactNumber: String,
     email: String
 }, {
     timestamps: true,
-    collection: 'business-contacts'
+    collection: 'business_contacts'
 });
-1
+
 export default mongoose.model('Business-Contacts',  BusinessContactsSchema);

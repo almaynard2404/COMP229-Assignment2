@@ -45,7 +45,7 @@ import { MongoURI, SecretCode } from '../config/config.js';
 
 // Import Routes from index.route.server.js for home, about, contact, projects and services.
 import indexRouter from './routes/index.route.server.js'
-//import businessContactsRouter from './routes/business-contact.route.server.js';
+import businessContactsRouter from './routes/business-contacts.route.server.js';
 import authRouter from './routes/auth.route.server.js';
 
 
@@ -121,7 +121,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // Use Routes (starts with home aka '/')
 app.use('/', indexRouter);
-//app.use('/', businessContactsRouter);
+app.use('/', businessContactsRouter);
 app.use('/', authRouter);
 
 // Export app for use

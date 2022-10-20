@@ -21,7 +21,7 @@ export function displayLoginPage(req, res, next){
         return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
     }
 
-    //return res.redirect('/movie-list');
+    return res.redirect('/home');
 }
 
 
@@ -44,84 +44,11 @@ export function processLoginPage(req, res, next){
                 res.end(err);
             }
 
-            return res.redirect('/');
+            return res.redirect('/home');
         })
         
     })(req, res, next);
 }
-
-
-// Display Functions
-export function displayBusinessContactsPage(req, res, next){
-    if(!req.user){
-        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
-    }
-
-    return res.redirect('/home');
-}
-
-
-// Processing Function
-export function processBusinessContactsPage(req, res, next){
-    passport.authenticate('local', function(err, user, info) {
-        if(err){
-            console.error(err);
-            res.end(err);
-        }     
-        
-        if(!user){
-            req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
-        }
-
-        req.logIn(user, function(err){
-            if(err){
-                console.error(err);
-                res.end(err);
-            }
-
-            return res.redirect('/');
-        })
-        
-    })(req, res, next);
-}
-
-
-// Display Functions
-export function displayUpdatePage(req, res, next){
-    if(!req.user){
-        return res.render('index', {title: 'Update', page: 'update', messages: req.flash('updateMessage'), username: Username(req) });
-    }
-
-    //return res.redirect('/movie-list');
-}
-
-
-// Processing Function
-export function processUpdatePage(req, res, next){
-    passport.authenticate('local', function(err, user, info) {
-        if(err){
-            console.error(err);
-            res.end(err);
-        }     
-        
-        if(!user){
-            req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
-        }
-
-        req.logIn(user, function(err){
-            if(err){
-                console.error(err);
-                res.end(err);
-            }
-
-            return res.redirect('/');
-        })
-        
-    })(req, res, next);
-}
-
 
 
 export function processLogoutPage(req, res, next){
