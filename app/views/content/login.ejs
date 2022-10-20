@@ -3,8 +3,22 @@ Student Name: Alexander Maynard
 Student ID: 301170707
 Date: 2022-10-19-->
 
-<!--Simple container for the home page content-->
+<!--Simple container for the login page content-->
 <div class="container">
     
-    <h2>Hello There!</h2>
+    <form id="form">
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" tabindex="1"><br><br>
+            <!--Placeholder to provide consistent spacing-->
+            <p id="empty"></p><br>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" tabindex="3"><br><br>
+            <!--Placeholder to provide consistent spacing-->
+            <p id="empty"></p><br>
+        </div>
+        <input id="send" name="Send" type="button" value="Send" tabindex="13">
+    </form>
 </div>
