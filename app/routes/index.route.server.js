@@ -10,10 +10,7 @@ import { displayAbout,
     displayContact, 
     displayHome, 
     displayProjects, 
-    displayServices,
-    displayLogin,
-    displayBusinessContacts,
-    displayUpdate } from "../controllers/index.controller.server.js";
+    displayServices } from "../controllers/index.controller.server.js";
 
 //Instantiate a const instance of router
 const router = Router();
@@ -27,9 +24,6 @@ router.get('/about', displayAbout);
 router.get('/projects', displayProjects);
 router.get('/services', displayServices);
 router.get('/contact', displayContact);
-router.get('/login', displayLogin);
-router.get('/business-contacts', displayBusinessContacts);
-router.get('/update', displayUpdate);
 
 //export to be used by other modules
 export default router;

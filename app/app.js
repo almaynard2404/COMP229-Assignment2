@@ -18,11 +18,41 @@ import { fileURLToPath } from 'url';
 //uncovers metadata to javascript module
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+
+
+// Auth Step 1 - import modules
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import flash from 'connect-flash';
+
+// Auth Step 2 - defien our auth strategy
+let localStrategy = passportLocal.Strategy;
+
+// Auth Step 3 - import the user model
+import User from './models/user.js';
+
+// Import Mongoose Module
+import mongoose from 'mongoose';
+
+
+
+
+
+
+
 // Configuration Module (secretCode from config.js file)
-import { SecretCode } from '../config/config.js';
+import { MongoURI, SecretCode } from '../config/config.js';
 
 // Import Routes from index.route.server.js for home, about, contact, projects and services.
 import indexRouter from './routes/index.route.server.js'
+//import businessContactsRouter from './routes/business-contact.route.server.js';
+import authRouter from './routes/auth.route.server.js';
+
+
+
+
+
+
 
 
 
@@ -31,6 +61,26 @@ import indexRouter from './routes/index.route.server.js'
 
 // Create instantiate of Express for the project
 const app = express();
+
+
+
+
+
+
+// Complete the DB Configuration
+mongoose.connect(MongoURI);
+const db = mongoose.connection;
+
+//Listen for connection success or error
+db.on('open', () => console.log("Connected to MongoDB"));
+db.on('error', () => console.log("Mongo Connection Error"));
+
+
+
+
+
+
+
 // Setup ViewEngine EJS to access views to render them into html form to the browser
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
@@ -54,10 +104,27 @@ app.use(session({
 }));
 
 
+
+// Auth Step 5 -  Setup Flash
+app.use(flash());
+
+// Auth Step 6 - Initialize Passport and Session
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Auth Step 7 - Implementing the Auth Strategy
+passport.use(User.createStrategy());
+
+// Auth Step 8 - Setup serialization and deserialization
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 // Use Routes (starts with home aka '/')
 app.use('/', indexRouter);
-
-
+//app.use('/', businessContactsRouter);
+app.use('/', authRouter);
 
 // Export app for use
 export default app;

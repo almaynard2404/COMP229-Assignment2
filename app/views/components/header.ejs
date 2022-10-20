@@ -59,6 +59,18 @@ Date: 2022-10-01-->
             <!--Boostrap link to update page-->
             <a class="nav-link <%= (page == 'update') ? 'active' : ''; %>" aria-current="page" href="/update"><i class="fa-solid fa-arrow-rotate-left fa-lg"></i> Update </a>
           </li> 
+
+          <% if(displayName) { %>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i> Logout</a>
+            </li>
+    
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>
+              </li>
+            <% } %>
         </ul>
       </div>
     </div>
