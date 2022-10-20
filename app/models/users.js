@@ -16,4 +16,4 @@ const UsersSchema = new Schema({
     collection: 'users'
 });
 
-export default mongoose.model('Movies', MovieSchema);
+export default mongoose.model('Users', UsersSchema);
