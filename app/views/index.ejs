@@ -16,18 +16,18 @@ Date: 2022-10-01-->
     <body>
         <!-- Navigation bar from header.ejs-->
         <header>           
-            <%- include('partials/header.ejs'); %>
+            <%- include('components/header.ejs'); %>
         </header>
         <!-- Main -->
         <main>
             <!-- 'content/nameofthepage.ejs' -->        
-            <%- include('partials/content.ejs'); %>
+            <%- include('components/content.ejs'); %>
             <!-- Content for '/content/ + home, about, contact, projects or services + .ejs'-->
             <%- include('content/' + page + '.ejs'); %>
         </main>        
         <!-- Footer from footer.ejs-->
         <footer>
-            <%- include('partials/footer.ejs'); %>
+            <%- include('components/footer.ejs'); %>
         </footer>  
         
          <!--Includes cdnjs.couldfare font awesome libnaries for the navbar icons(for home about and etc.) for use in pages-->

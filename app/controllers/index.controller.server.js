@@ -30,4 +30,19 @@ export function displayServices(req, res, next) {
     res.render('index', { title: 'Services', page: 'services'} );
 };
 
+//exports login page render
+export function displayLogin(req, res, next) {
+    res.render('index', { title: 'Login', page: 'login'} );
+};
+
+//exports services page render
+export function displayBusinessContacts(req, res, next) {
+    res.render('index', { title: 'Business Contacts', page: 'business-contacts'} );
+};
+
+//exports services page render
+export function displayUpdate(req, res, next) {
+    res.render('index', { title: 'Update', page: 'update'} );
+};
+
 
