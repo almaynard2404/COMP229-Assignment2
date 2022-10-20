@@ -5,4 +5,4 @@ Date: 2022-10-20*/
 
 //exports SecretCode for use in app.js
 export const SecretCode = "301170707";
-export const MOngoURI = "mongodb+srv://almaynard2404:ah0N4u4ZIccpIm0l@comp229-fall2022.mqk9wbc.mongodb.net/?retryWrites=true&w=majority";
+export const MongoURI = "mongodb+srv://almaynard2404:ah0N4u4ZIccpIm0l@comp229-fall2022.mqk9wbc.mongodb.net/?retryWrites=true&w=majority";

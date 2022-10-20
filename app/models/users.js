@@ -4,7 +4,8 @@ Student ID: 301170707
 Date: 2022-10-20*/
 
 import mongoose from 'mongoose';
-
+import passportLocalMongoose from 'passport-local-mongoose';
+const { PassportLocalSchema } = mongoose;
 const Schema = mongoose.Schema;
 
 const UsersSchema = new Schema({
@@ -16,4 +17,6 @@ const UsersSchema = new Schema({
     collection: 'users'
 });
 
-export default mongoose.model('Users', UsersSchema);
+UsersSchema.plugin(passportLocalMongoose);
+
+export default mongoose.model('User', UsersSchema);

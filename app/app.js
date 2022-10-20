@@ -29,7 +29,7 @@ import flash from 'connect-flash';
 let localStrategy = passportLocal.Strategy;
 
 // Auth Step 3 - import the user model
-import User from './models/user.js';
+import User from './models/users.js';
 
 // Import Mongoose Module
 import mongoose from 'mongoose';
@@ -102,8 +102,6 @@ app.use(session({
     saveUninitialized: false, 
     resave: false
 }));
-
-
 
 // Auth Step 5 -  Setup Flash
 app.use(flash());

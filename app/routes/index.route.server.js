@@ -10,7 +10,7 @@ import { displayAbout,
     displayContact, 
     displayHome, 
     displayProjects, 
-    displayServices } from "../controllers/index.controller.server.js";
+    displayServices } from "../controllers/index.controller.server.js"
 
 //Instantiate a const instance of router
 const router = Router();

@@ -45,22 +45,16 @@ Date: 2022-10-01-->
           <li class="nav-item">
             <!--Boostrap link to contact page-->
             <a class="nav-link <%= (page == 'contact') ? 'active' : ''; %>" aria-current="page" href="/contact"><i class="fa-solid fa-envelopes-bulk fa-lg"></i> Contact </a>
-          </li> 
-
-          <li class="nav-item">
-            <!--Boostrap link to login page-->
-            <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-user fa-lg"></i> Login </a>
-          </li> 
-          <li class="nav-item">
+          </li>
+          <li> 
             <!--Boostrap link to business contacts page-->
             <a class="nav-link <%= (page == 'business-contacts') ? 'active' : ''; %>" aria-current="page" href="/business-contacts"><i class="fa-solid fa-briefcase fa-lg"></i> Business Contacts </a>
           </li> 
           <li class="nav-item">
             <!--Boostrap link to update page-->
             <a class="nav-link <%= (page == 'update') ? 'active' : ''; %>" aria-current="page" href="/update"><i class="fa-solid fa-arrow-rotate-left fa-lg"></i> Update </a>
-          </li> 
-
-          <% if(displayName) { %>
+          </li>
+          <% if(username) { %>
 
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i> Logout</a>
@@ -71,6 +65,7 @@ Date: 2022-10-01-->
                 <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>
               </li>
             <% } %>
+          
         </ul>
       </div>
     </div>

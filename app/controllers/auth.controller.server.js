@@ -11,17 +11,17 @@ import express from 'express';
 import passport from 'passport';
 
 // import UsersModel for authentication
-import { UserDisplayName } from '../utils/index.js';
+import { Username } from '../utils/index.js';
 
 
 
 // Display Functions
 export function displayLoginPage(req, res, next){
     if(!req.user){
-        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) });
+        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
     }
 
-    return res.redirect('/movie-list');
+    //return res.redirect('/movie-list');
 }
 
 
@@ -54,10 +54,10 @@ export function processLoginPage(req, res, next){
 // Display Functions
 export function displayBusinessContactsPage(req, res, next){
     if(!req.user){
-        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) });
+        return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
     }
 
-    return res.redirect('/movie-list');
+    return res.redirect('/home');
 }
 
 
@@ -90,10 +90,10 @@ export function processBusinessContactsPage(req, res, next){
 // Display Functions
 export function displayUpdatePage(req, res, next){
     if(!req.user){
-        return res.render('index', {title: 'Update', page: 'update', messages: req.flash('updateMessage'), displayName: UserDisplayName(req) });
+        return res.render('index', {title: 'Update', page: 'update', messages: req.flash('updateMessage'), username: Username(req) });
     }
 
-    return res.redirect('/movie-list');
+    //return res.redirect('/movie-list');
 }
 
 
