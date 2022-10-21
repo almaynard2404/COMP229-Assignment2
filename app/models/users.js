@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 const UsersSchema = new Schema({
     username: String, 
     password: String, 
-    email: String,
+    email: String
 }, {
     timestamps: true,
     collection: 'users'

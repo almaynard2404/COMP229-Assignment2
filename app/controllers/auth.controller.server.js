@@ -21,7 +21,7 @@ export function displayLoginPage(req, res, next){
         return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
     }
 
-    return res.redirect('/');
+    return res.redirect('/business-contacts');
 }
 
 
@@ -31,8 +31,8 @@ export function processLoginPage(req, res, next){
         if(err){
             console.error(err);
             res.end(err);
-        }     
-        
+        };
+    
         if(!user){
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
