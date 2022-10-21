@@ -11,6 +11,6 @@ const router = Router();
 router.get('/business-contacts', AuthGuard, displaybusinessContactList);
 router.get('/update-business-contacts/:id', AuthGuard,  displayUpdatePage);
 router.post('/update-business-contacts/:id', AuthGuard, processUpdatePage);
-router.get('/business-contacts/:id', AuthGuard, processBusinessContactDelete);
+router.get('/delete-business-contact/:id', AuthGuard, processBusinessContactDelete);
 
 export default router;

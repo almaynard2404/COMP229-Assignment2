@@ -37,8 +37,16 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
                 
-                    <a href="/movie-list" class="btn btn-warning">
+                    <a href="/business-contacts" class="btn btn-warning">
                         <i class="fas fa-undo"></i> Cancel</a>
+                <% if(displayName) { %>
+                            
+                    <td class="text-center col-1">
+                        <a href="/delete-business-contact/<%= businessContact._id %>"
+                            class="btn btn-danger">
+                            <i class="fas fa-delete-left"></i> Delete</a>
+                    </td>
+                <% } %> 
             </form>
         </div>
     </div>
