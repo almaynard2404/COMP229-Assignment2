@@ -1,6 +1,5 @@
 import businessContactModel from '../models/business-contacts.js';
 
-
 import { UserDisplayName } from '../utils/index.js';
 
 export function displaybusinessContactList(req, res, next){
@@ -27,7 +26,7 @@ export function displayUpdatePage(req, res, next){
             res.end(err);
         }
 
-        res.render('index', { title: 'Update Business Contact', page: 'update', businessContact: businessContact, displayName: UserDisplayName(req) });
+        res.render('index', { title: 'Update Business Contact', page: 'update-business-contacts', businessContact: businessContact, displayName: UserDisplayName(req) });
     });    
 }
 
@@ -48,8 +47,8 @@ export function processUpdatePage(req, res, next){
             res.end(err);
         };
 
-        res.redirect('/business-contacts')
-    } )
+        res.redirect('/business-contacts');
+    })
 }
 
 export function processBusinessContactDelete(req, res, next){

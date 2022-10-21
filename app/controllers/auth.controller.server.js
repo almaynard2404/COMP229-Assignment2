@@ -47,7 +47,7 @@ export function processLoginPage(req, res, next){
                 res.end(err);
             }
 
-            return res.redirect('/');
+            return res.redirect('/business-contacts');
 
         })
         

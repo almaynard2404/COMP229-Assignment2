@@ -5,10 +5,6 @@ Date: 2022-10-19-->
 
 <!--Simple container for the business-contacts page content-->
 <div class="container">
-    <% if(displayName) { %>
-    <a href="/update" class="btn btn-primary" role="button">
-        <i class="fas fa-plus-circle"></i> Update Contact</a>
-    <% } %>
     <div class="row">
         <div class="col">
     
@@ -35,11 +31,19 @@ Date: 2022-10-19-->
                             <% if(displayName) { %>
                             
                             <td class="text-center col-1">
-                                <a href="/update/<%= businessContacts[count]._id %>"
+                                <a href="/update-business-contacts/<%= businessContacts[count]._id %>"
                                     class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> Edit</a>
+                                    <i class="fas fa-pencil-alt"></i> Update</a>
                             </td>
                             <% } %> 
+                            <% if(displayName) { %>
+                            
+                                <td class="text-center col-1">
+                                    <a href="/delete/<%= businessContacts[count]._id %>"
+                                        class="btn btn-danger btn-sm">
+                                        <i class="fas fa-delete-left"></i> Delete</a>
+                                </td>
+                                <% } %> 
                         </tr>
                     <% } %>
                 </tbody>
