@@ -1,7 +1,7 @@
 import businessContactModel from '../models/business-contacts.js';
 
 
-import { Username } from '../utils/index.js';
+import { UserDisplayName } from '../utils/index.js';
 
 export function displaybusinessContactList(req, res, next){
     businessContactModel.find(function(err, businessContactsCollection) {
@@ -10,7 +10,7 @@ export function displaybusinessContactList(req, res, next){
             res.end(err);
         }
 
-        res.render('index', {title: 'Business Contacts', page: 'business-contacts', businessContacts: businessContactsCollection, username: Username(req)});
+        res.render('index', {title: 'Business Contacts', page: 'business-contacts', businessContacts: businessContactsCollection, displayName: UserDisplayName(req) });
     })
 }
 
@@ -27,7 +27,7 @@ export function displayUpdatePage(req, res, next){
             res.end(err);
         }
 
-        res.render('index', { title: 'Update Business Contact', page: 'update', businessContact: businessContact, username: Username(req) });
+        res.render('index', { title: 'Update Business Contact', page: 'update', businessContact: businessContact, displayName: UserDisplayName(req) });
     });    
 }
 

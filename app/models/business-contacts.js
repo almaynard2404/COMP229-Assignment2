@@ -11,4 +11,4 @@ const BusinessContactsSchema = new Schema({
     collection: 'business_contacts'
 });
 
-export default mongoose.model('Business-Contacts',  BusinessContactsSchema);
+export default mongoose.model('Business_Contacts',  BusinessContactsSchema);
