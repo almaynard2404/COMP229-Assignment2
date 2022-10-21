@@ -21,7 +21,7 @@ export function displayLoginPage(req, res, next){
         return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), username: Username(req) });
     }
 
-    return res.redirect('/home');
+    return res.redirect('/');
 }
 
 
@@ -44,7 +44,7 @@ export function processLoginPage(req, res, next){
                 res.end(err);
             }
 
-            return res.redirect('/home');
+            return res.redirect('/');
         })
         
     })(req, res, next);
