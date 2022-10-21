@@ -3,9 +3,7 @@ Student Name: Alexander Maynard --> **Example from class
 Student ID: 301170707
 Date: 2022-10-01*/
 
-
 /*IMPORTS FOR THE PROJECT*/
-
 // Importing third-Party Modules to the project 
 import express from 'express';
 import cookieParser from 'cookie-parser';
@@ -17,8 +15,6 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 //uncovers metadata to javascript module
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-
 
 // Auth Step 1 - import modules
 import passport from 'passport';
@@ -34,12 +30,6 @@ import User from './models/users.js';
 // Import Mongoose Module
 import mongoose from 'mongoose';
 
-
-
-
-
-
-
 // Configuration Module (secretCode from config.js file)
 import { MongoURI, SecretCode } from '../config/config.js';
 
@@ -48,24 +38,10 @@ import indexRouter from './routes/index.route.server.js'
 import businessContactsRouter from './routes/business-contacts.route.server.js';
 import authRouter from './routes/auth.route.server.js';
 
-
-
-
-
-
-
-
-
-
 /*app.set and app.use statements for the project*/
 
 // Create instantiate of Express for the project
 const app = express();
-
-
-
-
-
 
 // Complete the DB Configuration
 mongoose.connect(MongoURI);
@@ -74,12 +50,6 @@ const db = mongoose.connection;
 //Listen for connection success or error
 db.on('open', () => console.log("Connected to MongoDB"));
 db.on('error', () => console.log("Mongo Connection Error"));
-
-
-
-
-
-
 
 // Setup ViewEngine EJS to access views to render them into html form to the browser
 app.set('views', path.join(__dirname, '/views'));
