@@ -1,7 +1,7 @@
 /*File: /public/content/scripts/app.js
 Student Name: Alexander Maynard
 Student ID: 301170707
-Date: 2022-10-01*/
+Date: 2022-10-21*/
 
 //strict formatting
 "use strict";

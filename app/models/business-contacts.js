@@ -1,3 +1,8 @@
+/*File: business-contacts.js
+Student Name: Alexander Maynard
+Student ID: 301170707
+Date: 2022-10-21-*/
+
 import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;

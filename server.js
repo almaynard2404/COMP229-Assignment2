@@ -1,7 +1,7 @@
 /*File: server.js
 Student Name: Alexander Maynard -----------> *****FROM CLASS EXAMPLE
 Student ID: 301170707
-Date: 2022-10-01*/
+Date: 2022-10-21*/
 
 
 //THIS FILE DEBUGS AND CHECK THE PORT AND THEN REROUTES THE PORT TO WORK EITHER LOCALLLY (port 3000) OR ON HEROKU (other PORT)

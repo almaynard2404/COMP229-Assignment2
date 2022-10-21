@@ -1,3 +1,8 @@
+/*File: auth.route.server.js
+Student Name: Alexander Maynard
+Student ID: 301170707
+Date: 2022-10-21-*/
+
 import {Router} from 'express';
 import { displayLoginPage,  
     processLoginPage,

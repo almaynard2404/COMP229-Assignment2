@@ -1,7 +1,7 @@
 //File: index.controller.server.js
 //Student Name: Alexander Maynard
 //Student ID: 301170707
-//Date: 2022-10-20
+//Date: 2022-10-21
 
 //import username for authentication on each page
 import { UserDisplayName } from "../utils/index.js";
