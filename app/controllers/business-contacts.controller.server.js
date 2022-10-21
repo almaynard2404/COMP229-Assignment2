@@ -20,9 +20,7 @@ export function displaybusinessContactList(req, res, next){
 
 
 
-
-
-export function displayUpdatePage(req, res, next){
+export function displayBusinessContacUpdatePage(req, res, next){
     let id = req.params.id;
 
     businessContactModel.findById(id, (err, businessContact) => {
@@ -35,8 +33,9 @@ export function displayUpdatePage(req, res, next){
     });    
 }
 
-export function processUpdatePage(req, res, next){
 
+
+export function processBusinessContacUpdatePage(req, res, next){
     let id = req.params.id;
     
     let newBusinessContact = businessContactModel({
@@ -55,6 +54,8 @@ export function processUpdatePage(req, res, next){
         res.redirect('/business-contacts');
     })
 }
+
+
 
 export function processBusinessContactDelete(req, res, next){
     let id = req.params.id;

@@ -6,13 +6,10 @@
 
 //import express
 import express from 'express';
-
 //import passport for authentication
 import passport from 'passport';
-
 // need to include the User Model for authentication
 import User from '../models/users.js';
-
 // import UsersModel for authentication
 import { UserDisplayName } from '../utils/index.js';
 
@@ -28,6 +25,7 @@ export function displayLoginPage(req, res, next){
 }
 
 
+
 // Processing Function
 export function processLoginPage(req, res, next){
     passport.authenticate('local', function(err, user, info) {
@@ -35,7 +33,7 @@ export function processLoginPage(req, res, next){
             console.error(err);
             res.end(err);
         }     
-        
+
         if(!user){
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
@@ -48,11 +46,10 @@ export function processLoginPage(req, res, next){
             }
 
             return res.redirect('/business-contacts');
-
         })
-        
     })(req, res, next);
 }
+
 
 
 export function displayRegisterPage(req, res, next){
@@ -62,6 +59,7 @@ export function displayRegisterPage(req, res, next){
 
     return res.redirect('/business-contacts');
 }
+
 
 
 export function processRegisterPage(req, res, next){
@@ -86,12 +84,11 @@ export function processRegisterPage(req, res, next){
 
         return passport.authenticate('local')(req, res, function()
         {
+            
             return res.redirect('/');
         });
     });
 }
-
-
 
 
 

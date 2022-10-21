@@ -5,9 +5,8 @@ Date: 2022-10-21-->
 
 <div class="container">
     <div class="row">
-      <div class="offset-md-3 col-md-6 col-sm-12">
+      <div class="offset-md-4 col-md-4 col-sm-12">
             <div class="login" id="contentArea">
-                <h1 class="display-4">Register</h1>
   
               <!-- Message Area -->
               <% if(messages.length > 0) { %>
@@ -15,17 +14,15 @@ Date: 2022-10-21-->
                   <%= messages %>
                 </div>
                 <% } %>
-  
                 <form method="POST" id="registerForm" novalidate>
-                  <p class="hint-text">Create your own account. It's free and only takes a minute.</p>
   
                   <div class="form-group">
                     <div class="row">
-                      <p class="lead"><i class="fas fa-user-shield"></i> Personal Information</p>
-                      <div class="col-md-6">
+                      <h3 class="lead"> Personal Information</h3>
+                      <div class="col-md-12">
                         <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
                       </div>
                     </div>
@@ -42,7 +39,7 @@ Date: 2022-10-21-->
   
                   <div class="form-group mt-4">
                     <div class="row">
-                      <p class="lead"><i class="fas fa-database"></i> System Identification</p>
+                      <h3 class="lead">Login Information</h3>
                       <div class="col-md-12">
                         <input type="text" class="form-control" id="username" name="username"  required
                         value="" placeholder="Username">
@@ -77,10 +74,7 @@ Date: 2022-10-21-->
                 </form>
               
             </div>
-            <p class="text-center text-muted small">
-              Already have an account? 
-              <a class="link" href="/login">Sign in</a>
-            </p>
+            <p class="text-center text-muted small">Have an account?&nbsp;&nbsp;&nbsp;<a class="link" href="/login">Sign in</a></p>
       </div>
     </div>
   </div>
