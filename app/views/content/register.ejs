@@ -3,31 +3,41 @@ Student Name: Alexander Maynard
 Student ID: 301170707
 Date: 2022-10-21-->
 
+
+
+<!--Simple container for the business-contacts page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <div class="container">
     <div class="row">
       <div class="offset-md-4 col-md-4 col-sm-12">
             <div class="login" id="contentArea">
   
-              <!-- Message Area -->
+              <!-- Message area for any errors-->
+              <!--if there's a message with a lenght > 0 display the message-->
               <% if(messages.length > 0) { %>
                 <div id="messageArea" class="alert alert-danger">
                   <%= messages %>
                 </div>
                 <% } %>
+                <!--Bootstrap Form for registration-->
                 <form method="POST" id="registerForm" novalidate>
-  
+                  
+                  <!--Personal information area-->
                   <div class="form-group">
                     <div class="row">
                       <h3 class="lead"> Personal Information</h3>
+                      <!--firstname text area-->
                       <div class="col-md-12">
                         <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" required>
                       </div>
+                      <!--lastname text area-->
                       <div class="col-md-12">
                         <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
                       </div>
                     </div>
                   </div>
-                  
+
+                  <!--email text area-->
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
@@ -37,9 +47,12 @@ Date: 2022-10-21-->
                     </div>
                   </div>
   
+                  <!--Login information area to be added to the user info on mogoDB (login info part)-->
                   <div class="form-group mt-4">
                     <div class="row">
                       <h3 class="lead">Login Information</h3>
+
+                      <!--username text area-->
                       <div class="col-md-12">
                         <input type="text" class="form-control" id="username" name="username"  required
                         value="" placeholder="Username">
@@ -47,6 +60,7 @@ Date: 2022-10-21-->
                     </div>
                   </div>
   
+                  <!--password text area-->
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
@@ -56,6 +70,7 @@ Date: 2022-10-21-->
                     </div>
                   </div>
   
+                  <!--confrim password text area-->
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-12">
@@ -64,7 +79,8 @@ Date: 2022-10-21-->
                       </div>
                     </div>
                   </div>
-                                                      
+                  
+                  <!--buttons area (use font awesome and bootstrap)-->
                   <div class="text-end mt-2">
                     <button id="submitButton" type="submit" class="btn btn-primary btn-lg">
                       <i class="fas fa-user-plus"></i> Register</button>
@@ -74,6 +90,7 @@ Date: 2022-10-21-->
                 </form>
               
             </div>
+            <!--This link leads to login page-->
             <p class="text-center text-muted small">Have an account?&nbsp;&nbsp;&nbsp;<a class="link" href="/login">Sign in</a></p>
       </div>
     </div>

@@ -4,12 +4,15 @@ Student ID: 301170707
 Date: 2022-10-21-->
 
 <!--Simple container for the business-contacts page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <div class="container">
     <div class="row">
         <div class="col">
+            <!--Bootstrap styles for a dark styled table-->
             <table class="table table-striped table-dark table-bordered container-fluid">
                 <thead class="table-dark">
                     <tr>
+                        <!--Columns for contact anem,contact number email & update/delete buttons-->
                         <th scope="col"><h2>CONTACT NAME</h2></th>
                         <th scope="col"><h2>CONTACT NUMBER</h2></th>
                         <th scope="col"><h2>EMAIL</h2></th>
@@ -19,13 +22,14 @@ Date: 2022-10-21-->
                 </thead>
                 <tbody id="businessContactList">
 
-                    <!-- Repeatable Rows -->
+                    <!-- Repeatable Rows for business contacts-->
                     <% for(let count = 0; count < businessContacts.length; count++) { %>
                         <tr>
                             <td><%= businessContacts[count].contactName %></td>
                             <td><%= businessContacts[count].contactNumber %></td>
                             <td><%= businessContacts[count].email %></td>
 
+                            <!--if logged in add the update button-->
                             <% if(displayName) { %>
                             <td class="text-center col-1">
                                 <a href="/update-business-contacts/<%= businessContacts[count]._id %>"
@@ -34,6 +38,7 @@ Date: 2022-10-21-->
                             </td>
                             <% } %> 
 
+                            <!--if logged in add the delete button-->
                             <% if(displayName) { %>
                                 <td class="text-center col-1">
                                     <a href="/delete-business-contact/<%= businessContacts[count]._id %>"

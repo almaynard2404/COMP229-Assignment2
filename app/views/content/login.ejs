@@ -3,18 +3,25 @@ Student Name: Alexander Maynard
 Student ID: 301170707
 Date: 2022-10-21-->
 
+
+<!--Simple container for the business-contacts page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <div class="container">
   <div class="row">
     <div class="offset-md-4 col-md-6 col-sm-12">
           <div class="login" id="contentArea">
-              <!-- Message Area -->
+              <!-- Message area for any errors-->
+              <!--if there's a message with a lenght > 0 display the message-->
               <% if(messages.length > 0) { %>
                 <div id="messageArea" class="alert alert-danger">
                 <%= messages %>
               </div>
               <% } %>
 
+              <!--bootstrap form for the login-->
+              <!--Bootstrap style for the login text area and uses font awesome icons-->
               <form method="POST" id="loginForm" novalidate>
+                <!--username input area-->
                 <div class="form-group mb-3">
                   <div class="input-group">
                     <input type="text" class="form-control" id="username" name="username"  required
@@ -22,13 +29,15 @@ Date: 2022-10-21-->
                   </div>
                 </div>
 
+                <!--password input area-->
                 <div class="form-group mb-4">
                   <div class="input-group">
                     <input type="password" class="form-control" id="password" name="password"  required
                     value="" placeholder="Enter your password">
                   </div>
-                </div>    
-                                                    
+                </div>
+
+                <!--buttons area-->                          
                 <div>
                   <button id="loginButton" type="submit" class="btn btn-primary btn-lg">
                     <i class="fas fa-sign-in-alt"></i> Login</button>
@@ -38,6 +47,7 @@ Date: 2022-10-21-->
               </form>
             
           </div>
+          <!--This link leads to register page-->
           <p class="text-center text-muted small">Need or want an account?&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="/register">Register Here!</a></p>
     </div>
   </div>

@@ -3,12 +3,18 @@ Student Name: Alexander Maynard
 Student ID: 301170707
 Date: 2022-10-21-->
 
+
+
+<!--Simple container for the business-contacts page content-->
+<!--**THIS PAGE USES BOOTSTRAP STYLES  AND FONT AWESOME ICONS**-->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-
+            <!--Form for updating a business contact-->
             <form class="form" method="POST">
                 <input type="hidden" name="id" value="<%= businessContact._id %>" >
+                
+                <!--Area to update a contact name for a business contact-->
                 <div class="form-group">
                     <label for="contactNameTextField">Contact Name</label>
                     <input type="text" class="form-control"
@@ -19,6 +25,7 @@ Date: 2022-10-21-->
                     required>
                 </div>
 
+                <!--Area to update a contact number for a business contact-->
                 <div class="form-group">
                     <label for="authorTextField">Contact Number</label>
                     <input type="text" class="form-control"
@@ -29,6 +36,7 @@ Date: 2022-10-21-->
                     required>
                 </div>
 
+                <!--Area to update a contact email for a business contact-->
                 <div class="form-group">
                     <label for="publishedTextField">Contact Email</label>
                     <input type="text" class="form-control"
@@ -39,13 +47,20 @@ Date: 2022-10-21-->
                     required>
                 </div>
 
+                <!--Area for submit button-->
+                <!--if logged in add the submit button-->
+                <% if(displayName) { %>
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
-                    <a href="/business-contacts" class="btn btn-warning">
-                        <i class="fas fa-undo"></i> Cancel</a>
+                <% } %> 
 
+                <!--Area for cancel button-->
+                <a href="/business-contacts" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+
+                <!--Area for the delete button-->
+                <!--if logged in add the delete button-->
                 <% if(displayName) { %>
-                            
                     <td class="text-center col-1">
                         <a href="/delete-business-contact/<%= businessContact._id %>"
                             class="btn btn-danger">

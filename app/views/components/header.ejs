@@ -50,10 +50,12 @@ Date: 2022-10-21-->
             <!--Boostrap link to business contacts page-->
             <a class="nav-link <%= (page == 'business-contacts') ? 'active' : ''; %>" aria-current="page" href="/business-contacts"><i class="fa-solid fa-briefcase fa-lg"></i> Business Contacts </a>
           </li> 
+          <!--If logged in (if displayName is true) it shows logout on nav bar and the link leads to loggout-->
           <% if(displayName) { %>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i> Logout</a>
             </li>
+            <!--Otherwise if logged out (if displayName false) it shows login on nav bar and the link leads to login-->
             <% } else { %>
               <li class="nav-item">
                 <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>

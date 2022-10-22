@@ -25,4 +25,5 @@ router.post('/register', processRegisterPage);
 // Process Logout Page
 router.get('/logout', processLogoutPage);
 
+//export router
 export default router;
